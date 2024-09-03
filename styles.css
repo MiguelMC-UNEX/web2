@@ -38,6 +38,7 @@ body {
 .main-content {
     display: flex;
 }
+
 .sidebar {
     flex: 1;
     padding: 20px;
@@ -47,7 +48,6 @@ body {
     position: relative; 
     top: -50px; /* Puedes usar esta propiedad para un ajuste más preciso */
 }
-
 
 .sidebar .profile-pic img {
     width: 100%;
@@ -61,9 +61,8 @@ body {
 }
 
 .contact-info {
-    margin-top: 30px; /* Opcional: Añade espacio arriba de la sección Contact Information */
+    margin-top: 30px; /* Añade espacio arriba de la sección Contact Information */
 }
-
 
 .sidebar .profile-pic img:hover {
     transform: scale(1.1); /* Efecto de zoom en la imagen de perfil */
@@ -102,9 +101,6 @@ body {
     font-size: 1em;
     margin-bottom: 20px;
 }
-
-
-
 
 /* Animaciones de desvanecimiento */
 @keyframes fadeIn {
@@ -165,7 +161,6 @@ footer.footer {
     color: #333;
 }
 
-
 .contact-form {
     margin-top: 40px;
 }
@@ -207,4 +202,48 @@ footer.footer {
 
 .contact-form button:hover {
     background-color: #1abc9c;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .header h2 {
+        font-size: 1.2em;
+    }
+
+    .main-content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        margin-top: 0;
+        margin-right: 0;
+        margin-bottom: 20px;
+        top: 0;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .contact-info li {
+        font-size: 0.9em;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9em;
+    }
+
+    .contact-form button {
+        width: 100%;
+        padding: 12px;
+    }
 }
