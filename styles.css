@@ -170,23 +170,27 @@ body {
 
 
 
-
-/* Barra de navegación */
-
+/* Barra de navegación - Ajustada */
 .nav-links {
-   position: fixed;
-   top: 20px;
-}  
+    position: fixed;
+    top: 20px;
+    left: 20px; /* Mueve la barra de navegación a la izquierda */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    background-color: white; /* Opcional: Añade un fondo para mayor visibilidad */
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Opcional: Sombra para mayor claridad */
+    border-radius: 5px; /* Bordes suaves para mejor estética */
+}
 
+/* Estilo para los enlaces dentro de la barra de navegación */
 .nav-links ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
 }
 
 .nav-links ul li {
-    margin-left: 20px;
+    margin-bottom: 10px; /* Añade espacio entre los elementos de la lista */
 }
 
 .nav-links ul li a {
@@ -198,6 +202,22 @@ body {
 
 .nav-links ul li a:hover {
     color: #16a085; /* Cambia de color al pasar el ratón */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .nav-links {
+        top: 100px; /* Baja la barra de navegación un poco más en pantallas pequeñas */
+        left: 10px; /* Ajusta para pantallas más pequeñas */
+    }
+
+    .nav-links ul {
+        flex-direction: column; /* Coloca los enlaces en una columna en lugar de en fila */
+    }
+
+    .nav-links ul li {
+        margin-bottom: 10px; /* Espacio entre los enlaces en pantallas pequeñas */
+    }
 }
 
 
