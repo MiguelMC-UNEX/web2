@@ -48,6 +48,8 @@
                         <li><i class="fas fa-phone"></i> Phone: +34 608911271</li>
                     </ul>
                 </section>
+
+
             </aside>
 
             <section class="content">
@@ -114,24 +116,55 @@
                         </ul>
                     </div>
                 </section>
-                
-                <section class="main-contact-form fade-in">
-                    <h3>📬 Contact Me</h3>
-                    <form action="https://formspree.io/f/xblrbdkl" method="POST">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="_replyto" required>
-                
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                
-                        <button type="submit">Send</button>
-                    </form>
-                </section>
+                                        <!-- Formulario de contacto con CAPTCHA manual -->
+<section class="main-contact-form fade-in">
+    <h3>📬 Contact Me</h3>
+    <form id="contact-form" onsubmit="return validateCaptcha()">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+    
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+    
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+    
+        <!-- CAPTCHA manual: pregunta matemática -->
+        <label for="captcha">What is <span id="num1"></span> + <span id="num2"></span>?</label>
+        <input type="text" id="captcha" name="captcha" required>
+    
+        <!-- Contenedor para mensajes de error -->
+        <p id="captcha-error" style="color: red; display: none;">Incorrect answer. Please try again.</p>
+    
+        <button type="submit">Send</button>
+    </form>
+</section>
 
-            </section>
+    <!-- Script para el CAPTCHA manual -->
+    <script>
+        // Genera dos números aleatorios para el CAPTCHA
+        const num1 = Math.floor(Math.random() * 10);
+        const num2 = Math.floor(Math.random() * 10);
+        
+        // Muestra los números en el formulario
+        document.getElementById('num1').textContent = num1;
+        document.getElementById('num2').textContent = num2;
+        
+        // Función para validar el CAPTCHA
+        function validateCaptcha() {
+            const userAnswer = parseInt(document.getElementById('captcha').value);
+            const correctAnswer = num1 + num2;
+        
+            if (userAnswer !== correctAnswer) {
+                // Si la respuesta es incorrecta, muestra un mensaje de error
+                document.getElementById('captcha-error').style.display = 'block';
+                return false; // Evita que el formulario se envíe
+            }
+            return true; // El CAPTCHA es correcto, permite el envío del formulario
+        }
+    </script>
+
+
         </div>
 
         <footer class="footer fade-in">

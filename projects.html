@@ -31,10 +31,10 @@
                 </ul>
             </section>
 
-            <!-- Formulario de Contacto -->
+            <!-- Formulario de Contacto con CAPTCHA -->
             <section class="project-contact-form fade-in">
                 <h3>📬 Contact Me</h3>
-                <form action="https://formspree.io/f/xblrbdkl" method="POST">
+                <form action="https://formspree.io/f/xblrbdkl" method="POST" onsubmit="return validateCaptcha()">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
             
@@ -44,6 +44,11 @@
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
             
+                    <!-- CAPTCHA manual: Pregunta matemática -->
+                    <label for="captcha">What is <span id="num1"></span> + <span id="num2"></span>?</label>
+                    <input type="text" id="captcha" name="captcha" required>
+                    <p id="captcha-error" style="color: red; display: none;">Incorrect answer. Please try again.</p>
+            
                     <button type="submit">Send</button>
                 </form>
             </section>
@@ -52,6 +57,30 @@
         <footer class="footer fade-in">
             <p>&copy; 2024 Miguel Medina Cantos. All rights reserved.</p>
         </footer>
+
+        <!-- Script para generar y validar el CAPTCHA -->
+        <script>
+            // Genera dos números aleatorios entre 0 y 9 para el CAPTCHA
+            const num1 = Math.floor(Math.random() * 10);
+            const num2 = Math.floor(Math.random() * 10);
+            
+            // Muestra los números en el formulario
+            document.getElementById('num1').textContent = num1;
+            document.getElementById('num2').textContent = num2;
+            
+            // Función para validar el CAPTCHA
+            function validateCaptcha() {
+                const userAnswer = parseInt(document.getElementById('captcha').value);
+                const correctAnswer = num1 + num2;
+            
+                if (userAnswer !== correctAnswer) {
+                    // Si la respuesta es incorrecta, muestra el mensaje de error
+                    document.getElementById('captcha-error').style.display = 'block';
+                    return false; // Evita que el formulario se envíe
+                }
+                return true; // CAPTCHA válido, permite el envío del formulario
+            }
+        </script>
     </div>
 </body>
 </html>
