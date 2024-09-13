@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Miguel Medina Cantos</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Include Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -16,71 +18,27 @@
                 <ul>
                     <li><a href="index.html">🏠 Home</a></li>
                     <li><a href="projects.html">📂 Projects</a></li>
+                    <li><a href="contact.html">📧 Contact</a></li>
+                    <li><a href="https://github.com/LordsMikel" target="_blank"><i class="fab fa-github"></i> GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/miguel-medina-cantos-b72a49258/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
                 </ul>
             </nav>
         </header>
 
-        <div class="main-content">
+        <div class="main-content-projects">
             <!-- Proyectos -->
             <section class="projects fade-in">
                 <h3>🛠️ My Projects</h3>
                 <ul>
                     <li><strong>🐧 Linux CPU Temperature Driver</strong>: A Linux kernel driver written in C to monitor the CPU temperature. <a href="https://github.com/LordsMikel/linux-cpu-temperature-driver" target="_blank">🔗 View on GitHub</a></li>
-                    
                     <li><strong>👤 Facial Recognition System using OpenCV</strong>: A system to verify facial features using an official Spanish ID (DNI) and match them with biometric data. <a href="https://github.com/LordsMikel/Facial-Recognition-System-using-OpenCV" target="_blank">🔗 View on GitHub</a></li>
                 </ul>
             </section>
+        </div> <!-- Cierre del contenedor principal -->
 
-            <!-- Formulario de Contacto con CAPTCHA -->
-            <section class="project-contact-form fade-in">
-                <h3>📬 Contact Me</h3>
-                <form action="https://formspree.io/f/xblrbdkl" method="POST" onsubmit="return validateCaptcha()">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-            
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="_replyto" required>
-            
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-            
-                    <!-- CAPTCHA manual: Pregunta matemática -->
-                    <label for="captcha">What is <span id="num1"></span> + <span id="num2"></span>?</label>
-                    <input type="text" id="captcha" name="captcha" required>
-                    <p id="captcha-error" style="color: red; display: none;">Incorrect answer. Please try again.</p>
-            
-                    <button type="submit">Send</button>
-                </form>
-            </section>
-        </div>
-
-        <footer class="footer fade-in">
+        <footer class="footer">
             <p>&copy; 2024 Miguel Medina Cantos. All rights reserved.</p>
         </footer>
-
-        <!-- Script para generar y validar el CAPTCHA -->
-        <script>
-            // Genera dos números aleatorios entre 0 y 9 para el CAPTCHA
-            const num1 = Math.floor(Math.random() * 10);
-            const num2 = Math.floor(Math.random() * 10);
-            
-            // Muestra los números en el formulario
-            document.getElementById('num1').textContent = num1;
-            document.getElementById('num2').textContent = num2;
-            
-            // Función para validar el CAPTCHA
-            function validateCaptcha() {
-                const userAnswer = parseInt(document.getElementById('captcha').value);
-                const correctAnswer = num1 + num2;
-            
-                if (userAnswer !== correctAnswer) {
-                    // Si la respuesta es incorrecta, muestra el mensaje de error
-                    document.getElementById('captcha-error').style.display = 'block';
-                    return false; // Evita que el formulario se envíe
-                }
-                return true; // CAPTCHA válido, permite el envío del formulario
-            }
-        </script>
     </div>
 </body>
 </html>
