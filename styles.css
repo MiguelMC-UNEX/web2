@@ -308,14 +308,16 @@ button:hover {
     text-decoration: underline;
 }
 
-/* Estilos responsivos */
+/* Responsive design para móviles */
 @media (max-width: 768px) {
-    .projects h3 {
-        font-size: 1.5em;
+    .nav-links ul li {
+        display: block; /* Cambia el diseño a bloque para dispositivos móviles */
+        margin: 10px 0; /* Espacio vertical entre los enlaces */
     }
-
-    .projects ul li {
-        font-size: 1em;
+    
+    .nav-links ul li a {
+        padding: 15px 25px; /* Aumenta el padding para un mejor toque en pantallas táctiles */
+        font-size: 1.2em; /* Aumenta el tamaño de la fuente para mejor legibilidad */
     }
 }
 
