@@ -10,7 +10,7 @@ body {
     background-color: #f0f0f0;
     color: #333;
     line-height: 1.6;
-    min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -18,12 +18,10 @@ body {
 /* Cabecera */
 .header {
     text-align: center;
-    padding: 50px 20px; /* Ajuste en el padding para móviles */
+    padding: 50px 20px;
     background-color: #2c3e50;
     color: #ffffff;
     border-bottom: 5px solid #16a085;
-    width: 100%; /* Ocupa todo el ancho de la página */
-    box-sizing: border-box;
 }
 
 .header h1 {
@@ -47,7 +45,6 @@ body {
 .nav-links ul {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 .nav-links ul li {
@@ -333,6 +330,263 @@ button:hover {
     margin-top: 20px; /* Asegura que haya espacio entre el contenido y el pie de página */
 }
 
+
+
+/* Nueva sección de premios */
+.awards {
+    margin-bottom: 40px;
+}
+
+.awards h3 {
+    color: #2c3e50;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.award-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.award-card:hover {
+    transform: translateY(-10px);
+}
+
+.award-details {
+    margin-left: 20px;
+}
+
+.award-details h4 {
+    color: #16a085;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.award-details p {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.awards-icon {
+    font-size: 2em;
+    color: #f1c40f;
+    animation: bounce 2s infinite;
+    display: inline-block;
+    margin-right: 10px;
+
+}
+
+/* Bounce Animation for Award Icon */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+ 
+
+.trophy-icon {
+    font-size: 3em;
+    color: #f1c40f;
+    /* animation: bounce 2s infinite; */
+}
+
+/* Bounce Animation for Trophy */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* Tarjetas de información */
+.info-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Emoticono de Educación animado estilo trofeo */
+.education-icon {
+    font-size: 2em;
+    color: #16a085; /* Color personalizado */
+    animation: bounce 2s infinite; /* Animación similar a la del trofeo */
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.certifications-icon {
+    font-size: 2em;
+    color: #16a085;
+    animation: bounce 2s infinite;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+/* Animación Bounce para el emoticono */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Animaciones e iconos para otras secciones */
+.skills-icon, .languages-icon, .experience-icon .certifications-icon {
+    font-size: 1.5em;
+    color: #16a085;
+}
+
+/* Sección de Educación */
+.education {
+    margin-bottom: 40px;
+}
+
+.education h3 {
+    font-size: 2em;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Sección de Habilidades Técnicas */
+.skills h3 {
+    font-size: 2em;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Sección de Idiomas */
+.languages h3 {
+    font-size: 2em;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Sección de Experiencia */
+.experience h3 {
+    font-size: 2em;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content h3 {
+        font-size: 1.5em;
+    }
+}
+
+/* Tarjetas de información más grandes */
+.large-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+    font-size: 1.2em; /* Tamaño de texto más grande */
+}
+
+.large-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Texto más grande */
+.large-text {
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Emoticono inline animado dentro del texto */
+.education-icon-inline-animated {
+    font-size: 1.8em;
+    color: #16a085; /* Color personalizado */
+    margin-right: 10px;
+    animation: bounce-inline 2s infinite; /* Animación */
+}
+
+/* Animación de bounce para el icono inline */
+@keyframes bounce-inline {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Animaciones e iconos de los títulos estilo trofeo */
+.education-icon, .skills-icon, .languages-icon, .experience-icon {
+    font-size: 2em;
+    color: #16a085;
+    animation: bounce 2s infinite;
+    margin-right: 10px;
+}
+
+/* Animación Bounce general */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .large-text {
+        font-size: 1.3em; /* Ajuste del tamaño para pantallas más pequeñas */
+    }
+}
+
+
+
+
 .certifications {
     margin-top: 40px;
 }
@@ -347,7 +601,7 @@ button:hover {
 }
 
 .certification-category h4 {
-    font-size: 1.2em;
+    font-size: 1.5em;
     color: #16a085;
     margin-bottom: 10px;
     display: flex;
@@ -366,6 +620,21 @@ button:hover {
 .certification-category ul li {
     font-size: 1em;
     color: #333;
+}
+
+
+/* Tarjetas de certificaciones */
+.cert-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-10px);
 }
 
 .about-me {
@@ -445,3 +714,30 @@ button:hover {
 .zoom-in:hover {
     transform: scale(1.1);
 }
+
+/* Estilos del video */
+.award-card video {
+    width: 100%;
+    height: auto;
+    margin-top: 20px; /* Añade un espacio entre el texto y el video */
+    border-radius: 10px; /* Bordes redondeados para el video */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave alrededor del video */
+}
+
+/* Créditos del video */
+.video-credits {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+    text-align: center;
+}
+
+.video-credits a {
+    color: #16a085;
+    text-decoration: none;
+}
+
+.video-credits a:hover {
+    text-decoration: underline;
+}
+

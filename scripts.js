@@ -22,4 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener('scroll', checkVisibility);
     checkVisibility(); // Activar la animación al cargar la página
+
+    
 });
+
+
