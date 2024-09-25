@@ -741,3 +741,9 @@ button:hover {
     text-decoration: underline;
 }
 
+.certificate-img {
+    display: block;
+    margin: 10px auto;
+    max-width: 75%;
+    height: auto;
+}
